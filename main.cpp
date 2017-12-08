@@ -77,8 +77,8 @@ int main() {
 					}
 
 					start = std::chrono::system_clock::now();
-					myData.q_sort(0, myData.getDatasize() - 1, poleq);
-					//sort(myData.get_vector().begin(), myData.get_vector().end(), [](Developers a, Developers b) {return a.floors < b.floors; });
+					//myData.q_sort(0, myData.getDatasize() - 1, poleq);
+					sort(myData.get_vector().begin(), myData.get_vector().end(), [](Developers a, Developers b) {return a.floors < b.floors; });
 					end = std::chrono::system_clock::now();
 
 					elapsed_seconds = std::chrono::duration<double>(end - start).count();

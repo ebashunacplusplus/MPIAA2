@@ -42,6 +42,7 @@ public:
 	~Database()
 	{
 	}
+	void standart_sort();
 	void combo_sort();
 	void b_sort(int pole);
 	void q_sort(int left, int right, int pole);

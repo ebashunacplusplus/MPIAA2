@@ -32,6 +32,10 @@ int main() {
 		cin >> flag;
 		switch (flag)
 		{
+		case 6:
+			myData.standart_sort();
+			system("pause");
+			break;
 		case 0:
 			exit(1);
 		case 1:
@@ -78,7 +82,7 @@ int main() {
 
 					start = std::chrono::system_clock::now();
 					//myData.q_sort(0, myData.getDatasize() - 1, poleq);
-					sort(myData.get_vector().begin(), myData.get_vector().end(), [](Developers a, Developers b) {return a.floors < b.floors; });
+					sort(myData.get_vector().begin(), myData.get_vector().end(), [](Developers& a, Developers& b) {return a.floors < b.floors; });
 					end = std::chrono::system_clock::now();
 
 					elapsed_seconds = std::chrono::duration<double>(end - start).count();

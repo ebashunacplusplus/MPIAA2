@@ -258,3 +258,16 @@ void my_sort_comb(std::vector<Developers> &backet, int p, int start, int end) {
 		for (int j = end; j > i; j--)
 			if (backet[i].get_poleInt(p)>backet[j].get_poleInt(p)) std::swap(backet[i], backet[j]);
 }
+
+void Database::standart_sort() {
+	double elapsed_seconds;
+	std::chrono::time_point<std::chrono::system_clock> start, end;
+	start = std::chrono::system_clock::now();
+	std::sort(table.begin(), table.end(), [](Developers& a, Developers& b) {return a.numhouse < b.numhouse; });
+	end = std::chrono::system_clock::now();
+
+	elapsed_seconds = std::chrono::duration<double>(end - start).count();
+
+	printf("N: %d, time: %.5f sec\n", table.size(), elapsed_seconds);
+
+}
